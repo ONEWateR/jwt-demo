@@ -36,6 +36,23 @@
   box-shadow: none;
 }
 
+
+@keyframes loading-dots {
+  0% {
+    content: '.';
+  }
+  50% {
+    content: '..';
+  }
+  100% {
+    content: '...';
+  }
+}
+
 .loading {
   opacity: .8;
+}
+.loading:after {
+  content: '';
+  animation: loading-dots 1s infinite alternate steps(3);
 }
