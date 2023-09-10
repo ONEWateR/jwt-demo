@@ -13,7 +13,7 @@ export default function Protected() {
 
   useEffect(() => {
     const fetch = async () => {
-      const data = await axios.get('/user/info')
+      const data = await axios.get('/user/info') as User
       setUserInfo(data)
     }
     fetch();

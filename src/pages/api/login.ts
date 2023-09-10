@@ -6,7 +6,7 @@ import {AuthCode} from "../../lib/constants";
 const DEFAULT_PASSWORD = md5('111');
 
 // 这里模拟账号密码验证
-const mockVerify = (username: string, password: string): Promise<User> | null => {
+const mockVerify = (username: string, password: string): Promise<User> => {
   if (username === 'admin' && password === DEFAULT_PASSWORD) {
     return Promise.resolve({ userId: 'adminMock', role: ['admin'] });
   }

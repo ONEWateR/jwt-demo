@@ -3,6 +3,8 @@ interface User {
   role: string[];
 }
 
+type Data = any;
+
 interface ServerData<T = any> {
   code?: number;
   success?: boolean;

@@ -4,11 +4,13 @@ import React, {useState} from "react";
 import type { KeyboardEvent, MouseEvent } from 'react'
 import cls from 'classnames';
 import md5 from 'md5';
+import {AxiosError} from "axios";
 
 import axios from "@/lib/fetch";
 import {USER_TOKEN} from "@/lib/constants";
 
 import styles from './login.module.css'
+
 
 const toast = (msg: string) => {
   // 这里就不写样式了，简单的做一个提示交互
@@ -30,11 +32,14 @@ export default function Home() {
       }
 
       setLoading(true)
-      const { token } = await axios.post('/login', {username, password: md5(password)})
+      const { token } = await axios.post('/login', {username, password: md5(password)}) as Data
       localStorage.setItem(USER_TOKEN, token);
       router.replace('/')
     } catch (error) {
-      alert(error.response?.data?.message || '登录失败');
+      if (error instanceof AxiosError) {
+        alert(error.response?.data?.message || '登录失败');
+      }
+
     } finally {
       setLoading(false)
     }
