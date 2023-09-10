@@ -25,9 +25,6 @@ export async function middleware(request: NextRequest) {
     // @ts-ignore
     return NextResponse.json({ code: e.code, message: e.message }, {status: 401})
   }
-
-
-
 }
 
 export const config = {
