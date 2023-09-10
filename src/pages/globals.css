@@ -86,6 +86,7 @@ body {
 }
 
 body {
+  margin: 0;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -104,4 +105,80 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+
+button {
+  outline: none;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  touch-action: manipulation;
+  line-height: 1.5714285714285714;
+  color: #fff;
+  background-color: #1677ff;
+  box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+  font-size: 14px;
+  height: 32px;
+  padding: 4px 15px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background: #52c41a;
+  height: 80px;
+  overflow: hidden;
+  padding: 24px;
+  color: #fff;
+}
+
+section {
+  /*padding: 16px;*/
+  font-size: 1rem;
+  line-height: 1.8rem;
+  color: #222;
+}
+
+code {
+  margin: 0 4px;
+  background-color: #52c41a;
+  color: #fff;
+}
+
+hr {
+  margin: 12px 0;
+  height: 1px;
+  background: #f2f2f2;
+  border: none;
+}
+
+a {
+  color: #1677ff;
+  text-align: center;
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  cursor: pointer;
 }
